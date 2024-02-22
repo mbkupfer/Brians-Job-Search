@@ -3,7 +3,7 @@ import webbrowser
 
 SITES = [
     "ashbyhq.com",
-    ":lever.co",
+    "lever.co",
     "greenhouse.io",
     "recruiting.paylocity.com",
     "jobs.workable.com",
