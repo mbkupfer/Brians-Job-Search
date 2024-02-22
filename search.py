@@ -46,7 +46,11 @@ if __name__ == "__main__":
     )
     parser.add_argument("--job-title", required=True)
     parser.add_argument(
-        "--query-date-range", "--qdr", choices=["d", "m", "w"], default="d"
+        "--query-date-range",
+        "--qdr",
+        choices=["d", "w", "m"],
+        default="d",
+        help="Limit searches to the last day (d; default), week (w), or month (m)",
     )
     args = parser.parse_args()
     main(job_title=args.job_title, query_date_range=args.query_date_range)
