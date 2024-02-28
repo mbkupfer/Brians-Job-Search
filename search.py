@@ -17,6 +17,7 @@ SITES = [
     "homerun.co",
     "catsone.com",
     "applytojob.com",
+    "glassdoor.com/job-listing",
 ]
 
 
