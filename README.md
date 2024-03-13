@@ -5,7 +5,7 @@ Largely inspired by https://briansjobsearch.com/, I created a CLI version that a
 ## Usage
 
 ```bash
-usage: search.py [-h] --job-title JOB_TITLE [--query-date-range {d,m,w}]
+usage: search.py [-h] --job-title JOB_TITLE [--query-date-range {d,w,m}] [--sites SITES]
 
 CLI job search tool inspired by Brian's Job Search.
 
@@ -14,6 +14,7 @@ options:
   --job-title JOB_TITLE
   --query-date-range {d,w,m}, --qdr {d,w,m}
                         Limit searches to the last day (d; default), week (w), or month (m)
+  --sites SITES         Text file for customizing the sites that are used.
 ```
 
 **Example**

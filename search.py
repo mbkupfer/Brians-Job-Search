@@ -34,8 +34,12 @@ def create_url(site: str, job_title: str, query_date_range: str) -> str:
     return base_url + query_string
 
 
-def main(job_title: str, query_date_range: str) -> None:
-    for site in SITES:
+def main(job_title: str, query_date_range: str, sites_fp=None) -> None:
+    if not sites_fp:
+        sites = SITES
+    else:
+        sites = [ln.strip() for ln in sites_fp.readlines()]
+    for site in sites:
         webbrowser.open_new_tab(create_url(site, job_title, query_date_range))
 
 
@@ -53,5 +57,14 @@ if __name__ == "__main__":
         default="d",
         help="Limit searches to the last day (d; default), week (w), or month (m)",
     )
+    parser.add_argument(
+        "--sites",
+        type=argparse.FileType("r"),
+        help="Text file for customizing the sites that are used.",
+    )
     args = parser.parse_args()
-    main(job_title=args.job_title, query_date_range=args.query_date_range)
+    main(
+        job_title=args.job_title,
+        query_date_range=args.query_date_range,
+        sites_fp=args.sites,
+    )
